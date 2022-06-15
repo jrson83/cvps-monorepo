@@ -1,0 +1,55 @@
+{
+  "name": "cvps-monorepo",
+  "description": "CLI, BUILD & UI packages for scaffolding @vite-plugin-ssr boilerplates",
+  "private": true,
+  "packageManager": "pnpm@7.2.1",
+  "scripts": {
+    "========= Only allow pnpm; forbid yarn & npm": "",
+    "preinstall": "npx only-allow pnpm",
+    "========= Clean": "",
+    "clean": "pnpm --stream -r clean",
+    "clean:modules": "rm -rf pnpm-lock.yaml && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "========= Prettier": "",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,vue,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,json,md}\"",
+    "========= Dev": "",
+    "dev": "echo \"Please specify either CLI or a UI Framework: dev:cli | dev:preact|react|vue\"",
+    "dev:build": "pnpm run --filter @scaffi/build dev",
+    "dev:cli": "pnpm run --filter @scaffi/cli dev",
+    "dev:cvps": "pnpm run --filter cvps dev",
+    "========= Build": "",
+    "build": "pnpm --stream -r build",
+    "build:build": "pnpm run --filter @scaffi/build build",
+    "build:cli": "pnpm run --filter @scaffi/cli build",
+    "build:cvps": "pnpm run --filter cvps build",
+    "========= Misc": "",
+    "list": "pnpm recursive list",
+    "list:workspaces": "pnpm m ls --depth -1 --porcelain"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.40",
+    "cross-env": "^7.0.3",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  },
+  "engines": {
+    "node": ">=12.19.0",
+    "npm": "use `pnpm` instead",
+    "yarn": "use `pnpm` instead"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/jrson83/create-vite-plugin-ssr",
+  "bugs": {
+    "url": "https://github.com/jrson83/create-vite-plugin-ssr/issues"
+  },
+  "homepage": "https://vite-plugin-ssr.com",
+  "license": "MIT",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "ssr"
+  ]
+}

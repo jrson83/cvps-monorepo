@@ -1,0 +1,11 @@
+{
+  "name": "@scaffi/build",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf lib/",
+    "build": "pnpm run clean && tsc -p ./tsconfig.build.json",
+    "dev": "ts-node -P ./tsconfig.build.json ./src"
+  }
+}

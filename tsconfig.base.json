@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "@scaffi/build": ["packages/build"],
+      "@scaffi/cli": ["packages/cli"],
+      "cvps": ["packages/cvps"]
+    }
+  },
+  "exclude": ["**/node_modules", "**/bin", "**/lib"],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}

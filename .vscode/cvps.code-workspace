@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "Root",
+      "path": "../"
+    },
+    {
+      "name": "CVPS",
+      "path": "../packages/cvps"
+    },
+    {
+      "name": "Build",
+      "path": "../packages/build"
+    },
+    {
+      "name": "CLI",
+      "path": "../packages/cli"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules/": true,
+      "packages": true
+    },
+    // Disable ventur to fix VUE linter errors
+    "vetur.validation.template": false,
+    "vetur.validation.script": false,
+    "vetur.validation.style": false,
+    "typescript.tsdk": "Root\\node_modules\\typescript\\lib"
+  }
+}
